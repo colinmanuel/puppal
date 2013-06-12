@@ -1,9 +1,9 @@
 <!-- Begin Header -->
 <div data-role="header" data-position="fixed">
-  <h1>Select Dog</h1>
+  <h1>PupPal</h1>
 <a data-iconshadow="false" data-shadow="false" data-iconpos="notext" style="display:none" >&nbsp;</a>
 
-<a href="#nav-panel" data-icon="bars" data-iconpos="notext" >&nbsp;</a>
+<a href="#nav-panel" data-role="button" data-icon="bars" data-iconpos="notext" >&nbsp;</a>
 </div>
 <!-- End Header -->
 
@@ -15,12 +15,12 @@
 <div data-role="content">
 <!-- <div data-role="collapsible-set" data-theme="a" data-inset="false"> -->
 <div data-role="collapsible-set" data-theme="a">
-        <h3>Dog Location</h3>
+        <h3>Find dogs...</h3>
 
     <div data-role="collapsible">
-        <h3>All Dogs</h3>
+        <h3>By Name</h3>
             <div class="all-dogs"> 
-                <ul data-role="listview" data-filter="true" data-autodividers="true" data-filter-placeholder="Search dogs..." >
+                <ul data-role="listview" data-filter="true" data-autodividers="true" data-filter-placeholder="Search..." >
                     <% @dogs.each do |dog| %>
                         <li>
                             <%= link_to edit_dog_path(dog) do %>

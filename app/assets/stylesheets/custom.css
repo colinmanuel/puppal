@@ -254,3 +254,11 @@ width:90%;
 fieldset.priority div.ui-controlgroup-controls div.ui-radio {
 width:30%;
 }
+
+/* Final minor tweaks */
+/*div, p, ul, li, span, a {
+text-shadow:none;
+}*/
+a:hover{
+	background: #3498db;
+}
