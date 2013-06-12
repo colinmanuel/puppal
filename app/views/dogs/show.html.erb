@@ -1,40 +1,47 @@
+
+<!-- Begin Header -->
+<div data-role="header" data-position="fixed">
+  <h1><%= @dog.name %>'s Profile</h1>
+    <%= link_to 'Back', dogs_path, { "data-icon"  => "back", "data-iconpos" => "notext" } %> 
+
+<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+</div>
+<!-- End Header -->
+
+<%= render "mobilepanel" %>
+
+<div data-role="content">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @dog.name %>
-</p>
+<table data-role="table" id="movie-table" data-mode="reflow" class="ui-responsive table-stroke">
+  <thead>
+    <tr>
+      <th data-priority="1">Name</th>
+      <th data-priority="persist">Priority</th>
+      <th data-priority="2">Site</th>
+      <th data-priority="3">Bio</th>
+      <th data-priority="4">Photo</th>
+      <th data-priority="5">Video</th>
+      <th data-priority="6">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
 
-<p>
-  <b>Priority:</b>
-  <%= @dog.priority %>
-</p>
-
-<p>
-  <b>Site:</b>
-  <%= @dog.site %>
-</p>
-
-<p>
-  <b>Bio:</b>
-  <%= @dog.bio %>
-</p>
-
-<p>
-  <b>Photo:</b>
-  <%= @dog.photo %>
-</p>
-
-<p>
-  <b>Video:</b>
-  <%= @dog.video %>
-</p>
-
-<p>
-  <b>Notes:</b>
-  <%= @dog.notes %>
-</p>
+      <td><%= @dog.name %></td>
+      <td><%= @dog.priority %></td>
+      <td><%= @dog.site %></td>
+      <td><%= @dog.bio %></td>
+      <td><%= @dog.photo %></td>
+      <td><%= @dog.video %></td>
+      <td><%= @dog.notes %></td>
+    </tr> 
+  </tbody>
+</table>
 
 
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+<%= link_to 'Edit Profile', edit_dog_path(@dog), { "data-role" => "button", "data-theme"  => "f" } %>
+</div>
+
+
+

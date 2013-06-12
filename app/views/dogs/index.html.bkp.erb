@@ -1,0 +1,66 @@
+<h1>Select Dog</h1>
+
+
+
+<% @dogs.each do |dog| %>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Site</th>
+    <th>Bio</th>
+    <th>Photo</th>
+    <th>Video</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><%= dog.name %></td>
+    <td><%= dog.site %></td>
+    <td><%= dog.bio %></td>
+    <td><%= dog.photo %></td>
+    <td><%= dog.video %></td>
+    <td><%= dog.notes %></td>
+    <td><%= link_to 'Show', dog %></td>
+    <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
+    <td><%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New dog', new_dog_path %>
+<%= link_to 'Show', @dog %>
+
+
+
+    <%= f.radio_button(:bio, "Complete") %>
+    <%= f.label(:bio, "Complete") %>
+    <%= f.radio_button(:bio, "Incomplete") %>
+    <%= f.label(:bio, "Incomplete") %>
+         <%= f.radio_button(:bio, "Update Needed") %>
+    <%= f.label(:bio, "Update Needed") %>
+
+
+WORKS ON TEXT INPUTS
+    , { :data => {:theme => :b}}
+
+TESTING
+"data-product-id" => product_id
+
+, :'data-foo' => 'bar', :'data-this' => 'that' 
+
+
+
+, :foo => "bar"
+
+
+     <label for="radio-choice-c">Complete</label>
+     <%= f.radio_button(:bio, 'Testing', { :data => {:theme => :a}})  %>
+
+
+

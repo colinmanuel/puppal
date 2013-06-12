@@ -1,0 +1,21 @@
+<!-- Begin Header -->
+<div data-role="header" data-position="fixed">
+  <h1><%= @dog.name %>'s Profile</h1>
+    <%= link_to 'Back', dogs_path, { "data-icon"  => "back" } %> 
+<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+</div>
+<!-- End Header -->
+
+<!-- Begin Panel -->
+	<div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
+
+		<ul data-role="listview" data-theme="a" class="nav-search">
+            <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>        
+            <li><%= link_to 'Home', dogs_path %> </li>
+            <li><a href="#panel-fixed-page2">By Location</a></li>
+            <li><a href="#panel-fixed-page2">By Need</a></li>
+            <li><a href="#panel-fixed-page2">TBD</a></li>
+            <li><a href="#panel-fixed-page2">TBD</a></li>
+        </ul>
+    </div>
+<!-- End Panel -->

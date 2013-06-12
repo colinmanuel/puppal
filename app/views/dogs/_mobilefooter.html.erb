@@ -1,0 +1,29 @@
+
+    <div id="footer" data-role="navbar" data-position="fixed" data-iconpos="top" data-theme="a">
+        <ul>
+            <li><a href="#" data-icon="star" data-theme="a">Favs</a></li>
+            <li><%= link_to 'Add', new_dog_path, "data-icon" => "plus", "data-theme" => "a" %></li>
+            <li><a href="#podogLogin" data-rel="podog" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Sign in</a>
+            </li>
+        </ul>
+
+        <div data-role="podog" id="podogMenu">
+    <div data-role="podog" id="podogLogin" data-theme="c" class="ui-corner-all" data-overlay-theme="a">
+        <form>
+            <div style="padding:10px 20px;">
+              <h3>Please sign in</h3>
+              <label for="un" class="ui-hidden-accessible">Username:</label>
+              <input type="text" name="user" id="un" value="" placeholder="username" data-theme="c">
+              <label for="pw" class="ui-hidden-accessible">Password:</label>
+              <input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="c">
+              <button type="submit" data-theme="b" data-icon="check">Sign in</button>
+            </div>
+        </form>
+    </div>
+</div>
+    </div>
+
+
+
+
+

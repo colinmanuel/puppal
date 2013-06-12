@@ -1,0 +1,16 @@
+<!-- Begin Panel -->
+	<div data-role="panel" data-position="right" data-position-fixed="true" data-theme="c" id="nav-panel">
+
+		<ul data-role="listview" data-theme="c"  class="nav-search">
+            <li data-icon="delete" ><a href="#" data-rel="close">Close menu</a></li>        
+            <li data-icon="home" data-iconpos="left"><%= link_to 'Home', dogs_path %>  </li>
+            <li data-iconpos="left" data-iconpos="left"><%= link_to 'By Location', location_path, { "data-iconpos" => "left" }  %></li>
+            <li><%= link_to 'By Priority', priority_path %></li>
+            <li><%= link_to 'Need Bios', bios_path %></li>
+            <li><%= link_to 'Need Photos', photos_path %></li>
+            <li><%= link_to 'Need Videos', videos_path %></li>
+        </ul>
+    </div>
+<!-- End Panel -->
+
+

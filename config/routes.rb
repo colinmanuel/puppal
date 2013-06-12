@@ -1,6 +1,11 @@
 Puppal::Application.routes.draw do
   resources :dogs
 
+  match 'location' => 'dogs#location'
+  match 'priority' => 'dogs#priority'
+  match 'bios' => 'dogs#bios'
+  match 'photos' => 'dogs#photos'
+  match 'videos' => 'dogs#videos'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
