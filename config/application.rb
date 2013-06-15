@@ -2,7 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 # config.assets.enabled = true
-# config.assets.paths << "#{Rails.root}/app/assets/fonts" 
+# config.assets.paths << "#{Rails.root}/vendor/assets/images" 
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
