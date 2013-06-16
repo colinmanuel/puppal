@@ -24,7 +24,9 @@
 
                     <% @dogs.each do |dog| %>
                         <li>
-                            <%= link_to edit_dog_path(dog) do %>
+                            <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+
+
                             <h3><%= dog.name %></h3>
                             <% end %>
                         </li>
@@ -40,7 +42,7 @@
                     <ul data-role="listview" data-count-theme="a">
                         <% Dog.low.each do |dog| %>
                             <li>
-                                <%= link_to edit_dog_path(dog) do %>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
                                 <h3><%= dog.name %></h3>
                                 <% end %>
                             </li>
@@ -52,7 +54,7 @@
                     <ul data-role="listview" data-count-theme="a">
                     <% Dog.med.each do |dog| %>
                         <li>
-                            <%= link_to edit_dog_path(dog) do %>
+                            <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
                             <h3><%= dog.name %></h3>
                             <% end %>
                         </li>
@@ -63,7 +65,7 @@
                 <ul data-role="listview" data-count-theme="a">
                     <% Dog.high.each do |dog| %>
                         <li>
-                            <%= link_to edit_dog_path(dog) do %>
+                            <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
                             <h3><%= dog.name %></h3>
                             <% end %>
                         </li>
@@ -80,7 +82,7 @@
                     <ul data-role="listview" data-autodividers="true"  >
                         <% Dog.tlac.each do |dog| %>
                             <li>
-                                <%= link_to edit_dog_path(dog) do %>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
                                 <h3><%= dog.name %></h3>
                                 <% end %>
                             </li>
@@ -91,7 +93,7 @@
                     <ul data-role="listview" data-autodividers="true"  >
                         <% Dog.mueller.each do |dog| %>
                             <li>
-                                <%= link_to edit_dog_path(dog) do %>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
                                 <h3><%= dog.name %></h3>
                                 <% end %>
                             </li>
@@ -103,7 +105,7 @@
                     <ul data-role="listview" data-autodividers="true"  >
                         <% Dog.brodie.each do |dog| %>
                             <li>
-                                <%= link_to edit_dog_path(dog) do %>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
                                 <h3><%= dog.name %></h3>
                                 <% end %>
                             </li>
@@ -114,7 +116,7 @@
                     <ul data-role="listview" data-autodividers="true"  >
                         <% Dog.soco.each do |dog| %>
                             <li>
-                                <%= link_to edit_dog_path(dog) do %>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
                                 <h3><%= dog.name %></h3>
                                 <% end %>
                             </li>
@@ -125,7 +127,7 @@
                     <ul data-role="listview" data-autodividers="true"  >
                         <% Dog.brodie.each do |dog| %>
                             <li>
-                                <%= link_to edit_dog_path(dog) do %>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
                                 <h3><%= dog.name %></h3>
                                 <% end %>
                             </li>

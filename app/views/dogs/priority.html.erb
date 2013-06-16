@@ -11,7 +11,54 @@
 
 
 <div data-role="content">
-<h1 style="text-align:center;">Coming Soon</h1>
+<div data-role="collapsible-set" data-theme="a" data-inset="false">
+        <h3>Find dogs by Priority:</h3>
+
+    <div data-role="collapsible">
+        <h3>3</h3>    
+       
+                   <ul data-role="listview" data-count-theme="a">
+                        <% Dog.low.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog) do %>
+                                <h3><%= dog.name %></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>               
+    </div>
+
+    <div data-role="collapsible">
+                <h4>2</h4>
+                    <ul data-role="listview" data-count-theme="a">
+                    <% Dog.med.each do |dog| %>
+                        <li>
+                            <%= link_to edit_dog_path(dog) do %>
+                            <h3><%= dog.name %></h3>
+                            <% end %>
+                        </li>
+                    <% end %>
+                </ul>
+     </div>
+
+
+    <div data-role="collapsible">
+
+           <h4>1</h4>
+                <ul data-role="listview" data-count-theme="a">
+                    <% Dog.high.each do |dog| %>
+                        <li>
+                            <%= link_to edit_dog_path(dog) do %>
+                            <h3><%= dog.name %></h3>
+                            <% end %>
+                        </li>
+                    <% end %>
+                </ul>
+    </div>
+	
+
+
+	</div>
 </div>
 
 
