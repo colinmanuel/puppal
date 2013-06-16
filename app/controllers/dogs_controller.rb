@@ -3,7 +3,6 @@ class DogsController < ApplicationController
   # GET /dogs.json
   def index
     @dogs = Dog.all
-    @tlac = Dog.where(site: 'TLAC')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @dogs }

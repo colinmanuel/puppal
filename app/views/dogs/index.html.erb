@@ -14,14 +14,8 @@
 
 <div data-role="content">
 <!-- <div data-role="collapsible-set" data-theme="a" data-inset="false"> -->
-<div data-role="collapsible-set" data-theme="a">
+<div data-role="collapsible-set" data-theme="a" data-inset="false">
         <h3>Find dogs by:</h3>
-
-
-<!-- BEGIN -->
-
-    
-<!-- END -->
 
     <div data-role="collapsible">
         <h3>Name</h3>
@@ -39,19 +33,52 @@
             </div>
     </div>
     <div data-role="collapsible">
-        <h3>Priority</h3>     
+        <h3>Priority</h3>    
         <ul data-role="listview" data-count-theme="a">
-            <li><a href="#">3 <span class="ui-li-count">4</span></a></li>
-            <li><a href="#">2 <span class="ui-li-count">328</span></a></li>
-            <li><a href="#">1 <span class="ui-li-count">62</span></a></li>
+            <li>
+                <h4>3</h4><span class="ui-li-count"><%= Dog.low.count %></span>
+                    <ul data-role="listview" data-count-theme="a">
+                        <% Dog.low.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog) do %>
+                                <h3><%= dog.name %></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>               
+            </li>
+            <li>
+                <h4>2</h4> <span class="ui-li-count"><%= Dog.med.count %></span>
+                    <ul data-role="listview" data-count-theme="a">
+                    <% Dog.med.each do |dog| %>
+                        <li>
+                            <%= link_to edit_dog_path(dog) do %>
+                            <h3><%= dog.name %></h3>
+                            <% end %>
+                        </li>
+                    <% end %>
+                </ul>
+            </li>
+            <li><h4>1</h4> <span class="ui-li-count"><%= Dog.high.count %></span>
+                <ul data-role="listview" data-count-theme="a">
+                    <% Dog.high.each do |dog| %>
+                        <li>
+                            <%= link_to edit_dog_path(dog) do %>
+                            <h3><%= dog.name %></h3>
+                            <% end %>
+                        </li>
+                    <% end %>
+                </ul>
+
+            </li>
         </ul>
     </div>
     <div data-role="collapsible">
         <h3>Location</h3>     
         <ul data-role="listview" data-count-theme="a">
-            <li><a href="#">TLAC <span class="ui-li-count"><%= @tlac.count %></span></a></li>
+            <li><h4>TLAC</h4> <span class="ui-li-count"><%= Dog.tlac.count%></span>
                     <ul data-role="listview" data-autodividers="true"  >
-                        <% @tlac.each do |dog| %>
+                        <% Dog.tlac.each do |dog| %>
                             <li>
                                 <%= link_to edit_dog_path(dog) do %>
                                 <h3><%= dog.name %></h3>
@@ -59,10 +86,52 @@
                             </li>
                         <% end %>
                     </ul>
-            <li><a href="#">51st and Mueller <span class="ui-li-count">0</span></a></li>
-            <li><a href="#">Brodie <span class="ui-li-count">4</span></a></li>
-            <li><a href="#">SoCo <span class="ui-li-count">328</span></a></li>
-            <li><a href="#">Lakeline <span class="ui-li-count">62</span></a></li>
+            </li>
+            <li><h4>51st and Mueller</h4> <span class="ui-li-count"><%= Dog.mueller.count%></span>
+                    <ul data-role="listview" data-autodividers="true"  >
+                        <% Dog.mueller.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog) do %>
+                                <h3><%= dog.name %></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>
+
+            </li>
+            <li><h4>Brodie</h4>  <span class="ui-li-count"><%= Dog.brodie.count%></span>
+                    <ul data-role="listview" data-autodividers="true"  >
+                        <% Dog.brodie.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog) do %>
+                                <h3><%= dog.name %></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>              
+            </li>
+            <li><h4>SoCo</h4>  <span class="ui-li-count"><%= Dog.soco.count%></span>
+                    <ul data-role="listview" data-autodividers="true"  >
+                        <% Dog.soco.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog) do %>
+                                <h3><%= dog.name %></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>
+            </li>
+            <li><h4>Lakeline</h4>  <span class="ui-li-count"><%= Dog.lakeline.count%></span>
+                    <ul data-role="listview" data-autodividers="true"  >
+                        <% Dog.brodie.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog) do %>
+                                <h3><%= dog.name %></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>
+            </li>
         </ul>
     </div>
     <div data-role="collapsible">

@@ -3,5 +3,17 @@ class Dog < ActiveRecord::Base
   attr_accessible :bio, :name, :notes, :photo, :priority, :site, :video
   # belongs_to :site, :foreign_key => 'id'
 
+  # Find by Site
+  scope :tlac, where(site: 'TLAC')
+  scope :mueller, where(site: '51st and Mueller')
+  scope :brodie, where(site: 'Brodie')
+  scope :soco, where(site: 'SoCo')
+  scope :lakeline, where(site: 'Lakeline')
+
+  # Find by Priority
+  scope :high, where(priority: 1)
+  scope :med, where(priority: 2)
+  scope :low, where(priority: 3)
+
 end
 
