@@ -22,12 +22,12 @@
 
     <fieldset class="priority" data-role="controlgroup" data-type="horizontal" data-mini="true">
         <legend><%= f.label :priority %></legend><br />
-         <label for="radio-choice-c">1</label>
-         <%= f.radio_button(:priority, '1', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>
-         <label for="radio-choice-e">2</label>
-         <%= f.radio_button(:priority, '2', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
          <label for="radio-choice-d">3</label>
          <%= f.radio_button(:priority, '3', :type => 'radio', :id => "radio-choice-d", :theme => "a")  %>
+         <label for="radio-choice-e">2</label>
+         <%= f.radio_button(:priority, '2', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
+         <label for="radio-choice-c">1</label>
+         <%= f.radio_button(:priority, '1', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>
     </fieldset>
 
 <!-- <%= f.text_field :priority, { :type => "range", :id => "slider-fill", :name => "slider-fill", :max => 10, :min => 0, :step => 1, :data => {:highlight => "true"}} %> -->
@@ -53,12 +53,12 @@
 <div data-role="fieldcontain">
   <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
       <legend>Has <%= f.label :bio %></legend><br />
-       <label for="radio-choice-c">No</label>
-       <%= f.radio_button(:bio, 'No', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>
-       <label for="radio-choice-e">Outdated</label>
-       <%= f.radio_button(:bio, 'Update Needed', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
        <label for="radio-choice-d">Yes</label>
        <%= f.radio_button(:bio, 'Yes', :type => 'radio', :id => "radio-choice-d", :theme => "a")  %>
+       <label for="radio-choice-e">Needs<br />Update</label>
+       <%= f.radio_button(:bio, 'Update Needed', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
+       <label for="radio-choice-c">No</label>
+       <%= f.radio_button(:bio, 'No', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>
   </fieldset>
 </div>
 
@@ -66,12 +66,12 @@
 <div data-role="fieldcontain">
   <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
       <legend>Has <%= f.label :photo %></legend><br />
-       <label for="radio-choice-c">No</label>
-       <%= f.radio_button(:photo, 'No', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>
-       <label for="radio-choice-e">Outdated</label>
-       <%= f.radio_button(:photo, 'Update Needed', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
        <label for="radio-choice-d">Yes</label>
        <%= f.radio_button(:photo, 'Yes', :type => 'radio', :id => "radio-choice-d", :theme => "a")  %>
+       <label for="radio-choice-e">Outdated</label>
+       <%= f.radio_button(:photo, 'Update Needed', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
+       <label for="radio-choice-c">No</label>
+       <%= f.radio_button(:photo, 'No', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>
   </fieldset>
 </div>
 
@@ -79,13 +79,12 @@
 <div data-role="fieldcontain">
   <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
       <legend>Has <%= f.label :video %></legend><br />
-       <label for="radio-choice-c">No</label>
-       <%= f.radio_button(:video, 'No', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>
-       <label for="radio-choice-e">Outdated</label>
-       <%= f.radio_button(:video, 'Update Needed', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
        <label for="radio-choice-d">Yes</label>
        <%= f.radio_button(:video, 'Yes', :type => 'radio', :id => "radio-choice-d", :theme => "a")  %>
-  </fieldset>
+       <label for="radio-choice-e">Outdated</label>
+       <%= f.radio_button(:video, 'Update Needed', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
+       <label for="radio-choice-c">No</label>
+       <%= f.radio_button(:video, 'No', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>  </fieldset>
 </div>
 
 
@@ -105,6 +104,8 @@
 <br />
 
 <%= link_to 'View Profile', @dog, { "data-role" => "button" } %>
+<%= link_to 'Delete Profile', @dog, method: :delete, data: { confirm: 'Are you sure?', role: "button", theme: "d" } %>
+
 
 
 </div>
