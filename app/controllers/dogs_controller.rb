@@ -1,6 +1,8 @@
 class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
+  # GET /dogs.json
+  
   def index
     @dogs = Dog.all
     respond_to do |format|
