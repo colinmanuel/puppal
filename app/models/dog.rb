@@ -15,5 +15,11 @@ class Dog < ActiveRecord::Base
   scope :med, where(priority: 2)
   scope :low, where(priority: 3)
 
+  # Find by Need
+  scope :need_photos, :conditions=>['photo == "Incomplete" OR photo == "Outdated"']
+  scope :need_videos, :conditions=>['video == "Incomplete" OR video == "Outdated"']
+  scope :need_bios, :conditions=>['bio == "Incomplete" OR bio == "Outdated"']
+
 end
+
 
