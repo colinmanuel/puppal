@@ -1,4 +1,4 @@
-/*
+
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -277,7 +277,20 @@ div, p, ul, li, span, a {
 text-shadow:none;
 }
 
-
+/* make dark blue icons background flat */
+.ui-icon.ui-icon-bars{
+background-color: rgb(44, 62, 80);
+}
 /*a:hover{
 	background: #3498db;
 }*/
+
+span.ui-li-count {
+float:right;
+display:inline-block;
+font-weight: bold; 
+padding: .2em .5em;
+font-size:11px;
+ top: 50%; 
+ /*margin-top: -1.5em; */
+}
