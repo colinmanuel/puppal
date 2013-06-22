@@ -156,44 +156,6 @@
 <div data-role="collapsible" data-theme="c" data-content-theme="c" data-inset="false">
             <h3>Need</h3>                    
 
-            <div data-role="collapsible" data-theme="d">
-                <h3>Photos <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.need_photos.count%></span></h3>
-                <ul data-role="listview" data-count-theme="a">
-                    <% Dog.need_photos.each do |dog| %>
-                        <li>
-                            <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
-                            <h3><%= dog.name %></h3>
-                            <% end %>
-                        </li>
-                    <% end %>
-                </ul>  
-            </div><!-- /high -->
-
-            <div data-role="collapsible" data-theme="f">
-                <h3>Videos <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.need_videos.count%></span></h3>
-                <ul data-role="listview" data-count-theme="a">
-                    <% Dog.need_videos.each do |dog| %>
-                        <li>
-                            <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
-                            <h3><%= dog.name %></h3>
-                            <% end %>
-                        </li>
-                    <% end %>
-                </ul>
-            </div><!-- /medium -->
-
-            <div data-role="collapsible" data-theme="g">
-                <h3>Bios <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.need_bios.count%></span></h3>
-                    <ul data-role="listview" data-count-theme="a">
-                        <% Dog.need_bios.each do |dog| %>
-                            <li>
-                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
-                                <h3><%= dog.name %></h3>
-                                <% end %>
-                            </li>
-                        <% end %>
-                    </ul>    
-            </div><!-- /low -->
 
 </div>      
 
