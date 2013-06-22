@@ -285,6 +285,11 @@ background-color: rgb(44, 62, 80);
 	background: #3498db;
 }*/
 
+.ui-bar-c {
+border:none;
+background:none;
+}
+
 span.ui-li-count {
 float:right;
 display:inline-block;
@@ -293,4 +298,9 @@ padding: .2em .5em;
 font-size:11px;
  top: 50%; 
  /*margin-top: -1.5em; */
+}
+
+.ui-icon .ui-icon-bars {
+border:none;
+background-color:none;
 }
