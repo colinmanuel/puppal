@@ -52,6 +52,7 @@ class DogsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
       end
+        # format.js
     end
   end
 
