@@ -111,7 +111,7 @@
     <%= f.submit "value" => "Update", "data-theme" => "g" %>
     <fieldset class="ui-grid-a">
         <div class="ui-block-a"><%= link_to 'Cancel', dogs_path, { "data-role" => "button" } %></div>
-        <div class="ui-block-b"><%= link_to 'Delete Profile', @dog, method: :delete, data: { confirm: 'Are you sure?', role: "button", theme: "d" } %></div>
+        <div class="ui-block-b"><%= link_to 'Delete', @dog, method: :delete, data: { confirm: 'Are you sure?', role: "button", theme: "d" } %></div>
     </fieldset>
   </div>
 

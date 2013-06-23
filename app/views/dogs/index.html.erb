@@ -12,7 +12,7 @@
 <div id="home-page" data-role="content">
 
 <div data-role="collapsible-set" data-inset="false">
-    <h3 data-role="list-divider">Find dogs by:</h3>
+    <h3 class="home-header" data-role="list-divider">Find dogs by:</h3>
 
 
 <!-- by name -->
@@ -38,7 +38,7 @@
 
 <!-- by priority -->
 
-<div data-role="collapsible" data-theme="c" data-content-theme="c" data-inset="false">
+<div id="by-priority" data-role="collapsible" data-theme="c" data-content-theme="c" data-inset="false">
             <h3>Priority</h3>                    
 
             <div data-role="collapsible" data-theme="d">
@@ -83,7 +83,7 @@
 </div>
              
 <!-- by location -->
-<div data-role="collapsible" data-theme="c" data-content-theme="c" data-inset="false">
+<div id="by-location" data-role="collapsible" data-theme="c" data-content-theme="c" data-inset="false">
             <h3>Location</h3>                    
             <div data-role="collapsible" data-theme="b">
                 <h3>TLAC <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.tlac.count%></span></h3>
@@ -155,9 +155,9 @@
              
 <!-- by need -->
 
-<div data-role="collapsible" data-theme="c" data-content-theme="c" data-inset="false">
+<div id="by-need" data-role="collapsible" data-theme="c" data-content-theme="c" data-inset="false">
             <h3>Need</h3>                    
-<div data-role="collapsible" data-theme="d">
+            <div id="need-photos" data-role="collapsible" data-theme="d">
                 <h3>Photos <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.needphotos.count%></span></h3>
                 <ul data-role="listview" data-count-theme="a">
                     <% Dog.needphotos.each do |dog| %>
@@ -170,7 +170,7 @@
                 </ul>  
             </div><!-- /high -->
 
-            <div data-role="collapsible" data-theme="f">
+            <div id="need-videos" data-role="collapsible" data-theme="f">
                 <h3>Videos <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.needvideos.count%></span></h3>
                 <ul data-role="listview" data-count-theme="a">
                     <% Dog.needvideos.each do |dog| %>
@@ -183,7 +183,7 @@
                 </ul>
             </div><!-- /medium -->
 
-            <div data-role="collapsible" data-theme="g">
+            <div id="need-bios" data-role="collapsible" data-theme="g">
                 <h3>Bios <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.needbios.count%></span></h3>
                     <ul data-role="listview" data-count-theme="a">
                         <% Dog.needbios.each do |dog| %>
