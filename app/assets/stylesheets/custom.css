@@ -344,10 +344,18 @@ div.ui-radio span.ui-btn-text {
 	margin-top:10px;
 }
 
+/* style index accordion header */
+.ui-collapsible-set {
+	margin-top:0;
+}
 
-/*#home-page h3.home-header {
+#home-page h3.home-header {
   color: #fff;
-  background:#333;
-  padding:0;
-  margin:0;
-}*/
+  background:#999;
+  padding:15px;
+  margin:0 -15px;
+  width: 100%;
+  display:block;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
