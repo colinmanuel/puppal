@@ -334,3 +334,12 @@ background:#ddd;
 div.ui-radio span.ui-btn-text { 
 	font-size: 1.2em;
 }
+
+/* upload btn styles */
+#upload-photo-btn,
+#upload-video-btn {
+	color:#666;
+	background: #fff;
+	border:none;
+	margin-top:10px;
+}

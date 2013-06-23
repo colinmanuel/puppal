@@ -9,13 +9,10 @@
 
 <%= render "mobilepanel" %>
 
-
-
-
 <div id="home-page" data-role="content">
 
 <div data-role="collapsible-set" data-inset="false">
-    <h3>Find dogs by:</h3>
+    <h3 data-role="list-divider">Find dogs by:</h3>
 
 
 <!-- by name -->
@@ -50,7 +47,7 @@
                     <% Dog.high.each do |dog| %>
                         <li>
                             <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
-                            <h3><%= dog.name %></h3>
+                            <h3><%= dog.name %> <p class="ui-li-aside"><%= dog.site %></p></h3>
                             <% end %>
                         </li>
                     <% end %>
@@ -63,7 +60,7 @@
                     <% Dog.med.each do |dog| %>
                         <li>
                             <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
-                            <h3><%= dog.name %></h3>
+                            <h3><%= dog.name %> <p class="ui-li-aside"><%= dog.site %></p></h3>
                             <% end %>
                         </li>
                     <% end %>
@@ -76,7 +73,7 @@
                         <% Dog.low.each do |dog| %>
                             <li>
                                 <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
-                                <h3><%= dog.name %></h3>
+                                <h3><%= dog.name %> <p class="ui-li-aside"><%= dog.site %></p></h3>
                                 <% end %>
                             </li>
                         <% end %>
@@ -166,7 +163,7 @@
                     <% Dog.needphotos.each do |dog| %>
                         <li>
                             <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
-                            <h3><%= dog.name %></h3>
+                            <h3><%= dog.name %> <p class="ui-li-aside"><%= dog.site %></p></h3>
                             <% end %>
                         </li>
                     <% end %>
@@ -179,7 +176,7 @@
                     <% Dog.needvideos.each do |dog| %>
                         <li>
                             <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
-                            <h3><%= dog.name %></h3>
+                            <h3><%= dog.name %> <p class="ui-li-aside"><%= dog.site %></p></h3>
                             <% end %>
                         </li>
                     <% end %>
@@ -192,7 +189,7 @@
                         <% Dog.needbios.each do |dog| %>
                             <li>
                                 <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
-                                <h3><%= dog.name %></h3>
+                                <h3><%= dog.name %> <p class="ui-li-aside"><%= dog.site %></p></h3>
                                 <% end %>
                             </li>
                         <% end %>
