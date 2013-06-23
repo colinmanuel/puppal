@@ -5,7 +5,7 @@ class Dog < ActiveRecord::Base
 
   # Order dogs alphabetically
   scope :alphabetically, order("name ASC")
-  
+
   # Find by Site
   scope :tlac, where(site: 'TLAC')
   scope :mueller, where(site: '51st and Mueller')
@@ -19,9 +19,9 @@ class Dog < ActiveRecord::Base
   scope :low, where(priority: 3)
 
   # Find by Need
-  scope :needphotos, :conditions=>['photo == "Incomplete" OR photo == "Outdated"']
-  scope :needvideos, :conditions=>['video == "Incomplete" OR video == "Outdated"']
-  scope :needbios, :conditions=>['bio == "Incomplete" OR bio == "Outdated"']
+  scope :needphotos, :conditions=>['photo == "Incomplete"']
+  scope :needvideos, :conditions=>['video == "Incomplete"']
+  scope :needbios, :conditions=>['bio == "Incomplete"']
 
 end
 
