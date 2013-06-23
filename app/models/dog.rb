@@ -3,6 +3,9 @@ class Dog < ActiveRecord::Base
   attr_accessible :bio, :name, :notes, :photo, :priority, :site, :video
   # belongs_to :site, :foreign_key => 'id'
 
+  # Order dogs alphabetically
+  scope :alphabetically, order("name ASC")
+  
   # Find by Site
   scope :tlac, where(site: 'TLAC')
   scope :mueller, where(site: '51st and Mueller')
@@ -16,9 +19,9 @@ class Dog < ActiveRecord::Base
   scope :low, where(priority: 3)
 
   # Find by Need
-  scope :need_photos, :conditions=>['photo == "Incomplete" OR photo == "Outdated"']
-  scope :need_videos, :conditions=>['video == "Incomplete" OR video == "Outdated"']
-  scope :need_bios, :conditions=>['bio == "Incomplete" OR bio == "Outdated"']
+  scope :needphotos, :conditions=>['photo == "Incomplete" OR photo == "Outdated"']
+  scope :needvideos, :conditions=>['video == "Incomplete" OR video == "Outdated"']
+  scope :needbios, :conditions=>['bio == "Incomplete" OR bio == "Outdated"']
 
 end
 

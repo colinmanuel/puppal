@@ -3,7 +3,7 @@
   <h1>PupPal</h1>
 <a data-iconshadow="false" data-shadow="false" data-iconpos="notext" style="display:none" >&nbsp;</a>
 
-<a href="#nav-panel" data-role="button" data-icon="bars" data-iconpos="notext" data-iconshadow="false" data-shadow="false" >&nbsp;</a>
+<a href="#nav-panel" class="ui-icon-nodisc" data-iconshadow="false" data-role="button" data-icon="bars" data-iconpos="notext" data-shadow="false" >&nbsp;</a>
 </div>
 <!-- End Header -->
 
@@ -34,6 +34,8 @@
                 </ul>
             </div>
     </div>
+
+    
 
 <!-- by priority -->
 
@@ -155,6 +157,44 @@
 
 <div data-role="collapsible" data-theme="c" data-content-theme="c" data-inset="false">
             <h3>Need</h3>                    
+<div data-role="collapsible" data-theme="d">
+                <h3>Photos <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.needphotos.count%></span></h3>
+                <ul data-role="listview" data-count-theme="a">
+                    <% Dog.needphotos.each do |dog| %>
+                        <li>
+                            <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                            <h3><%= dog.name %></h3>
+                            <% end %>
+                        </li>
+                    <% end %>
+                </ul>  
+            </div><!-- /high -->
+
+            <div data-role="collapsible" data-theme="f">
+                <h3>Videos <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.needvideos.count%></span></h3>
+                <ul data-role="listview" data-count-theme="a">
+                    <% Dog.needvideos.each do |dog| %>
+                        <li>
+                            <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                            <h3><%= dog.name %></h3>
+                            <% end %>
+                        </li>
+                    <% end %>
+                </ul>
+            </div><!-- /medium -->
+
+            <div data-role="collapsible" data-theme="g">
+                <h3>Bios <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.needbios.count%></span></h3>
+                    <ul data-role="listview" data-count-theme="a">
+                        <% Dog.needbios.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                                <h3><%= dog.name %></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>    
+            </div><!-- /low -->
 
 
 </div>      

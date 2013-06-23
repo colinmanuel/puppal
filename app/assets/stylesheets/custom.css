@@ -321,3 +321,8 @@ border:none;
     -moz-box-shadow: -5px 0px 5px rgba(0,0,0,.15);
     box-shadow: -5px 0px 5px rgba(0,0,0,.15);
 }
+
+/* style accordion backgrounds */
+.ui-collapsible-content.ui-body-c {
+background:#ddd;
+}

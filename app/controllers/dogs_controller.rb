@@ -4,7 +4,7 @@ class DogsController < ApplicationController
   # GET /dogs.json
   
   def index
-    @dogs = Dog.all
+    @dogs = Dog.alphabetically
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @dogs }
