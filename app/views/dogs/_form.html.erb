@@ -108,9 +108,10 @@
     <%= f.text_area :notes %>
   </div>
   <div class="actions">
+    <%= f.submit "value" => "Update", "data-theme" => "g" %>
     <fieldset class="ui-grid-a">
         <div class="ui-block-a"><%= link_to 'Cancel', dogs_path, { "data-role" => "button" } %></div>
-        <div class="ui-block-b"><%= f.submit "value" => "Update", "data-theme" => "b" %></div>
+        <div class="ui-block-b"><%= link_to 'Delete Profile', @dog, method: :delete, data: { confirm: 'Are you sure?', role: "button", theme: "d" } %></div>
     </fieldset>
   </div>
 
@@ -119,8 +120,8 @@
 <br />
 
 
-<%= link_to 'View Profile', @dog, { "data-role" => "button" } %>
-<%= link_to 'Delete Profile', @dog, method: :delete, data: { confirm: 'Are you sure?', role: "button", theme: "d" } %>
+<!-- <%= link_to 'View Profile', @dog, { "data-role" => "button" } %> -->
+
 
 
 <!-- temporary popup for photo and video upload -->

@@ -246,8 +246,8 @@ div.ui-radio .ui-btn-inner {
 
 .ui-submit {
 /*background: #4a8bf6;*/
-background: #3498db;
-border:1px solid rgb(204, 204, 204);
+/*background: #3498db;
+border:1px solid rgb(204, 204, 204);*/
 text-shadow:none;
 }
 
@@ -304,8 +304,8 @@ background:none;
 
 /* Increase home page button height */
 
-#home-page .ui-fullsize {
-padding:20px 0;
+#home-page .ui-collapsible-heading-toggle {
+padding:15px 0;
 border: 1px #ddd solid;
 }
 
@@ -313,14 +313,11 @@ border: 1px #ddd solid;
 border:none;
 }
 
-
-
 .ui-panel-display-reveal {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
 }
-
 
 .ui-panel-content-wrap-position-right {
     -webkit-box-shadow: -5px 0px 5px rgba(0,0,0,.15);
@@ -334,7 +331,6 @@ background:#ddd;
 }
 
 /* adjust radio button fonts */
-
 div.ui-radio span.ui-btn-text { 
 	font-size: 1.2em;
 }
