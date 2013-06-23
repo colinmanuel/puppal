@@ -19,9 +19,9 @@ class Dog < ActiveRecord::Base
   scope :low, where(priority: 3)
 
   # Find by Need
-  scope :needphotos, :conditions=>['photo == "Incomplete"']
-  scope :needvideos, :conditions=>['video == "Incomplete"']
-  scope :needbios, :conditions=>['bio == "Incomplete"']
+  scope :needphotos, where(photo:'Incomplete')
+  scope :needvideos, where(video:'Incomplete')
+  scope :needbios, where(bio:'Incomplete')
 
 end
 
