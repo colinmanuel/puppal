@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require_tree .
 
-    // $(function(){
-    //     $("#collapsible").collapsible({ header: "h4", navigation: true });
-    //  });
+
+
 

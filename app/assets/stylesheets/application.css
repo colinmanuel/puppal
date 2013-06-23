@@ -219,7 +219,6 @@
 
 /* radio overrides */
 /* red */
-
 [for=radio-choice-c].ui-btn-active {
 background: #d24836;
 text-shadow:none;
@@ -228,7 +227,7 @@ border:1px solid rgb(204, 204, 204);
 
 /* green */
 [for=radio-choice-d].ui-btn-active {
-background: #0f9d58;
+background: #2fa513;
 border:1px solid rgb(204, 204, 204);
 text-shadow:none;
 }
@@ -238,7 +237,6 @@ text-shadow:none;
 background: #f4b400;
 border:1px solid rgb(204, 204, 204);
 text-shadow:none;
-
 }
 
 div.ui-radio span.ui-btn-text {

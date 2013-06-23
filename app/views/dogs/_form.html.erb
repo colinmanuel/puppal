@@ -70,12 +70,18 @@
   <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
       <legend><%= f.label :photo %></legend><br />
        <label for="radio-choice-d">Complete</label>
-       <%= f.radio_button(:photo, 'Complete', :type => 'radio', :id => "radio-choice-d", :theme => "a")  %>
+       <%= f.radio_button(:photo, 'Complete', :type => 'radio', :id => "radio-choice-d", :class => "photo-complete", :theme => "a")  %>
        <label for="radio-choice-e">Outdated</label>
-       <%= f.radio_button(:photo, 'Outdated', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
+       <%= f.radio_button(:photo, 'Outdated', :type => 'radio', :id => "radio-choice-e", :class => "photo-outdated", :theme => "a") %>
        <label for="radio-choice-c">Incomplete</label>
-       <%= f.radio_button(:photo, 'Incomplete', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>
+       <%= f.radio_button(:photo, 'Incomplete', :type => 'radio', :id => "radio-choice-c", :class => "photo-incomplete", :theme => "a") %>
+
   </fieldset>
+
+    <div id="upload-photo">
+    <a href="#upload-popup" data-role="button" data-mini="true" data-inline="true" data-icon="edit" data-theme="c" data-rel="popup" data-position-to="window" data-transition="pop">Upload Photos</a>
+    </div>
+
 </div>
 
 
@@ -83,11 +89,17 @@
   <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
       <legend><%= f.label :video %></legend><br />
        <label for="radio-choice-d">Complete</label>
-       <%= f.radio_button(:video, 'Complete', :type => 'radio', :id => "radio-choice-d", :theme => "a")  %>
+       <%= f.radio_button(:video, 'Complete', :type => 'radio', :id => "radio-choice-d", :class => "video-complete", :theme => "a")  %>
        <label for="radio-choice-e">Outdated</label>
-       <%= f.radio_button(:video, 'Outdated', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
+       <%= f.radio_button(:video, 'Outdated', :type => 'radio', :id => "radio-choice-e", :class => "video-outdated", :theme => "a") %>
        <label for="radio-choice-c">Incomplete</label>
-       <%= f.radio_button(:video, 'Incomplete', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>  </fieldset>
+       <%= f.radio_button(:video, 'Incomplete', :type => 'radio', :id => "radio-choice-c", :class => "video-incomplete", :theme => "a") %>  
+  </fieldset>
+
+    <div id="upload-video">
+    <a href="#upload-popup" data-role="button" data-mini="true" data-inline="true" data-icon="edit" data-theme="c" data-rel="popup" data-position-to="window" data-transition="pop">Upload Video</a>
+    </div>
+
 </div>
 
 
@@ -109,6 +121,13 @@
 
 <%= link_to 'View Profile', @dog, { "data-role" => "button" } %>
 <%= link_to 'Delete Profile', @dog, method: :delete, data: { confirm: 'Are you sure?', role: "button", theme: "d" } %>
+
+
+<!-- temporary popup for photo and video upload -->
+<div id="upload-popup" data-role="popup" data-overlay-theme="a" class="ui-content">
+   <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+  <p>SmugMug Integration Coming Soon!</p>
+</div>
 
 
 

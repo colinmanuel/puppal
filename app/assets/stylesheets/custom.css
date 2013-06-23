@@ -202,27 +202,33 @@
 
 /* radio overrides */
 /* red */
-
-[for=radio-choice-c].ui-btn-active {
+/*[for=radio-choice-c].ui-btn-active,
+.radio-choice-c.ui-btn-active {
 background: #d24836;
 text-shadow:none;
 border:1px solid rgb(204, 204, 204);
-}
+}*/
 
 /* green */
-[for=radio-choice-d].ui-btn-active {
+/*[for=radio-choice-d].ui-btn-active,
+ .radio-choice-d.ui-btn-active {
 background: #2fa513;
 border:1px solid rgb(204, 204, 204);
 text-shadow:none;
-}
+}*/
 
 /* yellow */
-[for=radio-choice-e].ui-btn-active {
+/*[for=radio-choice-e].ui-btn-active,
+.radio-choice-e.ui-btn-active {
 background: #f4b400;
 border:1px solid rgb(204, 204, 204);
 text-shadow:none;
+}*/
 
-}
+/* radio overrides with new id and class names */
+
+
+
 
 div.ui-radio span.ui-btn-text {
 font-size:1.3em;
@@ -325,4 +331,10 @@ border:none;
 /* style accordion backgrounds */
 .ui-collapsible-content.ui-body-c {
 background:#ddd;
+}
+
+/* adjust radio button fonts */
+
+div.ui-radio span.ui-btn-text { 
+	font-size: 1.2em;
 }

@@ -3,16 +3,23 @@
 
 	<div data-role="panel" data-position="right" data-iconpos="left" data-position-fixed="true" data-theme="a" id="nav-panel">
 		<ul data-role="listview" data-theme="a"  class="nav-search">
-            <li data-icon="delete" ><a href="#" data-rel="close">Close menu</a></li>        
-            <li data-icon="home" data-iconpos="left"><%= link_to 'Home', dogs_path %>  </li>
-            <li data-iconpos="left" data-icon="none"  data-iconpos="left"><%= link_to 'By Location', location_path, { "data-iconpos" => "left" }  %></li>
-            <li><%= link_to 'By Priority', priority_path %></li>
-            <li><%= link_to 'Need Bios', bios_path %></li>
-            <li><%= link_to 'Need Photos', photos_path %></li>
-            <li><%= link_to 'Need Videos', videos_path %></li>
-            <li><a href="#" data-rel="close">About</a></li>
+            <!-- <li data-icon="false" ><a href="#" data-icon="delete" data-iconpos="notext"data-rel="close">Close menu</a></li> 
+            <li data-icon="false" data-iconpos="left"><%= link_to 'Home', dogs_path %>  </li> -->
+            <li data-icon="false" data-iconpos="left"><a href="../">Home</a></li>
+            <li data-icon="false" ><a href="#by-name">By Name</a></li>
+            <li data-icon="false" ><%= link_to 'By Location', location_path %></li>
+            <li data-icon="false" ><%= link_to 'By Priority', priority_path %></li>
+            <li data-icon="false" ><%= link_to 'Need Bios', bios_path %></li>
+            <li data-icon="false" ><%= link_to 'Need Photos', photos_path %></li>
+            <li data-icon="false" ><%= link_to 'Need Videos', videos_path %></li>
+            <li data-icon="false" ><a href="#about-popup" data-rel="popup" data-position-to="window"  data-transition="pop">About</a></li>
         </ul>
     </div>
 <!-- End Panel -->
 
 
+
+<div id="about-popup" data-role="popup" data-overlay-theme="a" data-theme="c" class="ui-content">
+   <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+  <p>PupPal is still in prototype. Follow developments on Github - https://github.com/colinmanuel</p>
+</div>

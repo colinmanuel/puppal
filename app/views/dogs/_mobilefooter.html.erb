@@ -1,7 +1,8 @@
 
     <div id="footer" data-role="navbar" data-position="fixed" data-iconpos="top" data-theme="a">
         <ul>
-            <li><a href="#" class="ui-icon-nodisc" iconshadow="false" data-icon="star" data-theme="a" data-inline="true">Favs</a></li>
+            <li><a href="#favs-popup" data-rel="popup" data-icon="star" data-theme="a" data-role="button" data-inline="true" data-position-to="window"  data-transition="pop">Favs</a>
+            </li>
             <li><%= link_to 'Add', new_dog_path, "data-icon" => "plus", "data-theme" => "a" %></li>
             <li><a href="#popupLogin" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Sign in</a>
             </li>
@@ -26,4 +27,8 @@
 
 
 
+<div id="favs-popup" data-role="popup" data-overlay-theme="a" class="ui-content">
+   <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+  <p>Coming Soon!</p>
+</div>
 
