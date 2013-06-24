@@ -49,7 +49,9 @@
     <legend><%= f.label :site %></legend>
     <%= f.select(:site,['TLAC','51st and Mueller','Brodie','SoCo','Lakeline']) %>
 
-    <!-- <a href="#">Map</a> -->
+    <div id="site-directions">
+        <a href="#site-directions" id="site-directions-btn" data-role="button" data-mini="true" data-inline="true" data-icon="info" data-theme="c" data-rel="popup" data-position-to="window" data-transition="pop">Get Directions</a>
+    </div>
   </div>
 
 
@@ -127,7 +129,7 @@
 <!-- temporary popup for photo and video upload -->
 <div id="upload-popup" data-role="popup" data-overlay-theme="a" class="ui-content">
    <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-  <p>SmugMug Integration Coming Soon!</p>
+  <p>SmugMug integration coming soon!</p>
 </div>
 
 

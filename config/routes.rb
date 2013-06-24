@@ -1,5 +1,5 @@
 Puppal::Application.routes.draw do
-  root :to => 'Dogs#index'
+  root :to => 'dogs#index'
   resources :dogs
 
   match 'location' => 'dogs#location'

@@ -336,6 +336,7 @@ div.ui-radio span.ui-btn-text {
 }
 
 /* upload btn styles */
+#site-directions-btn,
 #upload-photo-btn,
 #upload-video-btn {
 	color:#666;
