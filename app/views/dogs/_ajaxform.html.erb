@@ -1,14 +1,11 @@
-<div data-role="content">
 
-
-
-<%= form_for(@dog) do |f| %>
-  <% if @dog.errors.any? %>
+<%= form_for(dog) do |f| %>
+  <% if dog.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@dog.errors.count, "error") %> prohibited this dog from being saved:</h2>
+      <h2><%= pluralize(dog.errors.count, "error") %> prohibited this dog from being saved:</h2>
 
       <ul>
-      <% @dog.errors.full_messages.each do |msg| %>
+      <% dog.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -113,25 +110,8 @@
     <%= f.submit "value" => "Update", "data-theme" => "g" %>
     <fieldset class="ui-grid-a">
         <div class="ui-block-a"><%= link_to 'Cancel', dogs_path, { "data-role" => "button" } %></div>
-        <div class="ui-block-b"><%= link_to 'Delete', @dog, method: :delete, data: { confirm: 'Are you sure?', role: "button", theme: "d" } %></div>
+        <div class="ui-block-b"><%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?', role: "button", theme: "d" } %></div>
     </fieldset>
   </div>
 
 <% end %>
-
-<br />
-
-
-<!-- <%= link_to 'View Profile', @dog, { "data-role" => "button" } %> -->
-
-
-
-<!-- temporary popup for photo and video upload -->
-<div id="upload-popup" data-role="popup" data-overlay-theme="a" class="ui-content">
-   <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-  <p>SmugMug integration coming soon!</p>
-</div>
-
-
-
-</div>
