@@ -1,0 +1,13 @@
+	alert('Create running js');
+
+// open name accordion
+$('.submitform').bind('ajax:success', function() {  
+    // $(this).closest('tr').fadeOut();  
+	alert('Create running js');
+});  
+
+$('#by-name').trigger('expand');
+
+// append new dog to list
+$('div#doglist').append("<%= escape_javascript(render @dog) %>");
+$('div#<%= dom_id(@dog) %>').effect('highlight');

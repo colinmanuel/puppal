@@ -1,0 +1,453 @@
+<!-- Begin Header -->
+<div data-role="header" data-position="fixed" >
+  <h1>PupPal</h1>
+<a data-iconshadow="false" data-shadow="false" data-iconpos="notext" style="display:none" >&nbsp;</a>
+
+<a href="#nav-panel" class="ui-icon-nodisc" data-iconshadow="false" data-role="button" data-icon="bars" data-iconpos="notext" data-shadow="false" >&nbsp;</a>
+</div>
+<!-- End Header -->
+
+
+
+<%= render "mobilepanel" %>
+
+
+<div id="home-page" data-role="content">
+    <h4 class="home-header" data-role="list-divider">Find dogs by:</h4>
+
+<div data-role="collapsible-set" data-inset="false">
+
+
+<!-- by name -->
+    <div id="by-name" data-role="collapsible"  data-content-theme="c" data-inset="false">
+        <h3>Name</h3>
+            <div class="all-dogs"> 
+                <ul data-role="listview" data-filter="true" data-autodividers="true" data-filter-placeholder="Search..." data-inset="false">
+
+                    <% @dogs.each do |dog| %>
+                        <li>
+                            <div id="<%= dom_id(dog) %>" data-role="collapsible"  data-content-theme="c" data-inset="false">
+                                <h3><%= dog.name %></h3> 
+<span>
+<!-- begin form -->
+<%= form_for(dog, remote: true) do |f| %>
+  <% if dog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dog.errors.count, "error") %> prohibited this dog from being saved:</h2>
+
+      <ul>
+      <% dog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div data-role="fieldcontain">
+    <legend><%= f.label :name %></legend>
+    <%= f.text_field :name, { :data => {:theme => :c}}  %>
+  </div>
+
+
+  <div data-role="fieldcontain">
+
+    <fieldset class="priority"  data-role="controlgroup" data-type="horizontal" data-mini="true">
+        <legend><%= f.label :priority %></legend><br />
+         <label for="radio-choice-d">3</label>
+         <%= f.radio_button(:priority, '3', :type => 'radio', :id => "radio-choice-d", :theme => "a")  %>
+         <label for="radio-choice-e">2</label>
+         <%= f.radio_button(:priority, '2', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
+         <label for="radio-choice-c">1</label>
+         <%= f.radio_button(:priority, '1', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>
+    </fieldset>
+
+
+  </div>
+
+
+  <div data-role="fieldcontain">
+    <legend><%= f.label :site %></legend>
+    <%= f.select(:site,['TLAC','51st and Mueller','Brodie','SoCo','Lakeline']) %>
+
+    <div id="site-directions">
+        <a href="#site-directions" id="site-directions-btn" data-role="button" data-mini="true" data-inline="true" data-icon="info" data-theme="c" data-rel="popup" data-position-to="window" data-transition="pop">Get Directions</a>
+    </div>
+  </div>
+
+
+<div data-role="fieldcontain">
+  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+      <legend><%= f.label :bio %></legend><br />
+       <label for="radio-choice-d">Complete</label>
+       <%= f.radio_button(:bio, 'Complete', :type => 'radio', :id => "radio-choice-d", :theme => "a")  %>
+       <label for="radio-choice-e">Outdated</label>
+       <%= f.radio_button(:bio, 'Outdated', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
+       <label for="radio-choice-c">Incomplete</label>
+       <%= f.radio_button(:bio, 'Incomplete', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>
+  </fieldset>
+</div>
+
+
+<div data-role="fieldcontain">
+  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+      <legend><%= f.label :photo %></legend><br />
+       <label for="radio-choice-d">Complete</label>
+       <%= f.radio_button(:photo, 'Complete', :type => 'radio', :id => "radio-choice-d", :class => "photo-complete", :theme => "a")  %>
+       <label for="radio-choice-e">Outdated</label>
+       <%= f.radio_button(:photo, 'Outdated', :type => 'radio', :id => "radio-choice-e", :class => "photo-outdated", :theme => "a") %>
+       <label for="radio-choice-c">Incomplete</label>
+       <%= f.radio_button(:photo, 'Incomplete', :type => 'radio', :id => "radio-choice-c", :class => "photo-incomplete", :theme => "a") %>
+
+  </fieldset>
+
+    <div id="upload-photo">
+    <a href="#upload-popup" id="upload-photo-btn" data-role="button" data-mini="true" data-inline="true" data-icon="edit" data-theme="c" data-rel="popup" data-position-to="window" data-transition="pop">Upload Photos</a>
+    </div>
+
+</div>
+
+
+<div data-role="fieldcontain">
+  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+      <legend><%= f.label :video %></legend><br />
+       <label for="radio-choice-d">Complete</label>
+       <%= f.radio_button(:video, 'Complete', :type => 'radio', :id => "radio-choice-d", :class => "video-complete", :theme => "a")  %>
+       <label for="radio-choice-e">Outdated</label>
+       <%= f.radio_button(:video, 'Outdated', :type => 'radio', :id => "radio-choice-e", :class => "video-outdated", :theme => "a") %>
+       <label for="radio-choice-c">Incomplete</label>
+       <%= f.radio_button(:video, 'Incomplete', :type => 'radio', :id => "radio-choice-c", :class => "video-incomplete", :theme => "a") %>  
+  </fieldset>
+
+    <div id="upload-video">
+    <a href="#upload-popup" id="upload-video-btn" data-role="button" data-mini="true" data-inline="true" data-icon="edit" data-theme="c" data-rel="popup" data-position-to="window" data-transition="pop">Upload Video</a>
+    </div>
+
+</div>
+
+
+  <div data-role="fieldcontain">
+    <legend><%= f.label :notes %></legend>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit "value" => "Update", "data-theme" => "g" %>
+    <fieldset class="ui-grid-a">
+        <div class="ui-block-a"><%= link_to 'Cancel', dogs_path, { "data-role" => "button" } %></div>
+        <div class="ui-block-b"><%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?', role: "button", theme: "d" }, remote: true %></div>
+    </fieldset>
+  </div>
+
+<% end %>
+
+<!-- /end form -->
+
+
+
+
+
+                                </span>
+                            </div>                                   
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+    </div>
+
+
+
+<!-- by priority -->
+
+<div id="by-priority" data-role="collapsible" data-theme="c" data-content-theme="c" data-inset="false">
+            <h3>Priority</h3>                    
+
+            <div data-role="collapsible" data-theme="d">
+                <h3 class="ui-link-inherit">High <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.high.count %></span></h3>
+                <ul data-role="listview" data-count-theme="a">
+                    <% Dog.high.each do |dog| %>
+                        <li>
+                            <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                            <h3><%= dog.name %> <p class="ui-li-aside"><%= dog.site %></p></h3>
+                            <% end %>
+                        </li>
+                    <% end %>
+                </ul>  
+            </div><!-- /high -->
+
+            <div data-role="collapsible" data-theme="e">
+                <h3>Medium <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.med.count%></span></h3>
+                <ul data-role="listview" data-count-theme="a">
+                    <% Dog.med.each do |dog| %>
+                        <li>
+                            <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                            <h3><%= dog.name %> <p class="ui-li-aside"><%= dog.site %></p></h3>
+                            <% end %>
+                        </li>
+                    <% end %>
+                </ul>
+            </div><!-- /medium -->
+
+            <div data-role="collapsible" data-theme="g">
+                <h3>Low <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.low.count%></span></h3>
+                    <ul data-role="listview" data-count-theme="a">
+                        <% Dog.low.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                                <h3><%= dog.name %> <p class="ui-li-aside"><%= dog.site %></p></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>    
+            </div><!-- /low -->
+
+</div>
+             
+<!-- by location -->
+<div id="by-location" data-role="collapsible" data-theme="c" data-content-theme="c" data-inset="false">
+            <h3>Location</h3>                    
+            <div data-role="collapsible" data-theme="b">
+                <h3>TLAC <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.tlac.count%></span></h3>
+                <ul data-role="listview" >
+                        <% Dog.tlac.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                                <h3><%= dog.name %></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                </ul>
+            </div><!-- /tlac -->
+
+            <div data-role="collapsible" data-theme="d">
+                <h3>51st and Mueller <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.mueller.count%></span></h3>
+                    <ul data-role="listview" >
+                        <% Dog.mueller.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                                <h3><%= dog.name %></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>
+            </div><!-- /mueller -->
+
+            <div data-role="collapsible" data-theme="e">
+                <h3>Brodie <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.brodie.count%></span></h3>
+                    <ul data-role="listview" >
+                        <% Dog.brodie.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                                <h3><%= dog.name %></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>    
+            </div><!-- /brodie -->
+
+
+            <div data-role="collapsible" data-theme="f">
+                <h3>SoCo <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.soco.count%></span></h3>
+                    <ul data-role="listview" >
+                        <% Dog.soco.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                                <h3><%= dog.name %></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>
+            </div><!-- /soco -->
+
+            <div data-role="collapsible" data-theme="g">
+                <h3>Lakeline <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.lakeline.count%></span></h3>
+                    <ul data-role="listview" >
+                        <% Dog.lakeline.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                                <h3><%= dog.name %></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>
+            </div><!-- /lakeline -->
+
+</div>
+             
+<!-- by need -->
+
+<div id="by-need" data-role="collapsible" data-theme="c" data-content-theme="c" data-inset="false">
+            <h3>Need</h3>                    
+            <div id="need-photos" data-role="collapsible" data-theme="d">
+                <h3>Photos <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.needphotos.count%></span></h3>
+                <ul data-role="listview" data-count-theme="a">
+                    <% Dog.needphotos.each do |dog| %>
+                        <li>
+                            <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                            <h3><%= dog.name %> <p class="ui-li-aside"><%= dog.site %></p></h3>
+                            <% end %>
+                        </li>
+                    <% end %>
+                </ul>  
+            </div><!-- /high -->
+
+            <div id="need-videos" data-role="collapsible" data-theme="f">
+                <h3>Videos <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.needvideos.count%></span></h3>
+                <ul data-role="listview" data-count-theme="a">
+                    <% Dog.needvideos.each do |dog| %>
+                        <li>
+                            <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                            <h3><%= dog.name %> <p class="ui-li-aside"><%= dog.site %></p></h3>
+                            <% end %>
+                        </li>
+                    <% end %>
+                </ul>
+            </div><!-- /medium -->
+
+            <div id="need-bios" data-role="collapsible" data-theme="g">
+                <h3>Bios <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= Dog.needbios.count%></span></h3>
+                    <ul data-role="listview" data-count-theme="a">
+                        <% Dog.needbios.each do |dog| %>
+                            <li>
+                                <%= link_to edit_dog_path(dog), {"data-transition" => "slidefade"}  do %>
+                                <h3><%= dog.name %> <p class="ui-li-aside"><%= dog.site %></p></h3>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>    
+            </div><!-- /low -->
+</div> <!-- /collapsible set -->
+
+<!-- Begin add dog -->
+<h3>Add Dog</h3>
+
+<%= form_for(dog.new, remote: true) do |f| %>
+  <% if dog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dog.errors.count, "error") %> prohibited this dog from being saved:</h2>
+
+      <ul>
+      <% dog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div data-role="fieldcontain">
+    <legend><%= f.label :name %></legend>
+    <%= f.text_field :name, { :data => {:theme => :c}}  %>
+  </div>
+
+
+  <div data-role="fieldcontain">
+
+    <fieldset class="priority"  data-role="controlgroup" data-type="horizontal" data-mini="true">
+        <legend><%= f.label :priority %></legend><br />
+         <label for="radio-choice-d">3</label>
+         <%= f.radio_button(:priority, '3', :type => 'radio', :id => "radio-choice-d", :theme => "a")  %>
+         <label for="radio-choice-e">2</label>
+         <%= f.radio_button(:priority, '2', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
+         <label for="radio-choice-c">1</label>
+         <%= f.radio_button(:priority, '1', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>
+    </fieldset>
+
+<!-- <%= f.text_field :priority, { :type => "range", :id => "slider-fill", :name => "slider-fill", :max => 10, :min => 0, :step => 1, :data => {:highlight => "true"}} %> -->
+
+  </div>
+
+
+<!-- <form>
+    <label for="slider-2">Slider (default is "false"):</label>
+    <input type="range" name="slider-2" id="slider-2" data-highlight="true" min="0" max="100" value="50">
+</form>
+ -->
+<!-- <input type="range" name="slider-fill" id="slider-fill" value="3" min="0" max="10" step="1" data-highlight="true"> -->
+
+  <div data-role="fieldcontain">
+    <legend><%= f.label :site %></legend>
+    <%= f.select(:site,['TLAC','51st and Mueller','Brodie','SoCo','Lakeline']) %>
+
+    <div id="site-directions">
+        <a href="#site-directions" id="site-directions-btn" data-role="button" data-mini="true" data-inline="true" data-icon="info" data-theme="c" data-rel="popup" data-position-to="window" data-transition="pop">Get Directions</a>
+    </div>
+  </div>
+
+
+<div data-role="fieldcontain">
+  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+      <legend><%= f.label :bio %></legend><br />
+       <label for="radio-choice-d">Complete</label>
+       <%= f.radio_button(:bio, 'Complete', :type => 'radio', :id => "radio-choice-d", :theme => "a")  %>
+       <label for="radio-choice-e">Outdated</label>
+       <%= f.radio_button(:bio, 'Outdated', :type => 'radio', :id => "radio-choice-e", :theme => "a") %>
+       <label for="radio-choice-c">Incomplete</label>
+       <%= f.radio_button(:bio, 'Incomplete', :type => 'radio', :id => "radio-choice-c", :theme => "a") %>
+  </fieldset>
+</div>
+
+
+<div data-role="fieldcontain">
+  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+      <legend><%= f.label :photo %></legend><br />
+       <label for="radio-choice-d">Complete</label>
+       <%= f.radio_button(:photo, 'Complete', :type => 'radio', :id => "radio-choice-d", :class => "photo-complete", :theme => "a")  %>
+       <label for="radio-choice-e">Outdated</label>
+       <%= f.radio_button(:photo, 'Outdated', :type => 'radio', :id => "radio-choice-e", :class => "photo-outdated", :theme => "a") %>
+       <label for="radio-choice-c">Incomplete</label>
+       <%= f.radio_button(:photo, 'Incomplete', :type => 'radio', :id => "radio-choice-c", :class => "photo-incomplete", :theme => "a") %>
+
+  </fieldset>
+
+    <div id="upload-photo">
+    <a href="#upload-popup" id="upload-photo-btn" data-role="button" data-mini="true" data-inline="true" data-icon="edit" data-theme="c" data-rel="popup" data-position-to="window" data-transition="pop">Upload Photos</a>
+    </div>
+
+</div>
+
+
+<div data-role="fieldcontain">
+  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+      <legend><%= f.label :video %></legend><br />
+       <label for="radio-choice-d">Complete</label>
+       <%= f.radio_button(:video, 'Complete', :type => 'radio', :id => "radio-choice-d", :class => "video-complete", :theme => "a")  %>
+       <label for="radio-choice-e">Outdated</label>
+       <%= f.radio_button(:video, 'Outdated', :type => 'radio', :id => "radio-choice-e", :class => "video-outdated", :theme => "a") %>
+       <label for="radio-choice-c">Incomplete</label>
+       <%= f.radio_button(:video, 'Incomplete', :type => 'radio', :id => "radio-choice-c", :class => "video-incomplete", :theme => "a") %>  
+  </fieldset>
+
+    <div id="upload-video">
+    <a href="#upload-popup" id="upload-video-btn" data-role="button" data-mini="true" data-inline="true" data-icon="edit" data-theme="c" data-rel="popup" data-position-to="window" data-transition="pop">Upload Video</a>
+    </div>
+
+</div>
+
+
+  <div data-role="fieldcontain">
+    <legend><%= f.label :notes %></legend>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit "value" => "Update", "data-theme" => "g" %>
+    <fieldset class="ui-grid-a">
+        <div class="ui-block-a"><%= link_to 'Cancel', dogs_path, { "data-role" => "button" } %></div>
+        <div class="ui-block-b"><%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?', role: "button", theme: "d" } %></div>
+    </fieldset>
+  </div>
+
+<% end %>
+
+<!-- /add dog -->
+
+</div>      
+
+
+
+
+
+
+
+</div>
+
+
+<%= render "mobilefooter" %>
+

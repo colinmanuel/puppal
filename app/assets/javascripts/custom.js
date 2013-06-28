@@ -1,8 +1,5 @@
 
 $( document ).ready(function() {
-	
-
-
  // make nav panel toggle accordions
     // name
     $('.panel-by-name').on('click', function (){
