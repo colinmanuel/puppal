@@ -10,4 +10,4 @@ $('#by-name').trigger('expand');
 
 // append new dog to list
 $('div#doglist').append("<%= escape_javascript(render @dog) %>");
-$('div#<%= dom_id(@dog) %>').effect('highlight');
+$('li#<%= dom_id(@dog) %>').effect('highlight');

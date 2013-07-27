@@ -60,7 +60,12 @@ $( document ).ready(function() {
 		$('#upload-video').show();
 	});
 
-
+	// open dog list when you click add dog
+	$('.add-dog').on('click', function (){
+        $('#add-dog-form').show();
+	    // $('#by-name').trigger('expand');
+	    // $('#doglist').html('<%= render "form" %>');
+	});
 
 
 });

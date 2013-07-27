@@ -1,8 +1,7 @@
-<div data-role="content">
 
 
 
-<%= form_for(@dog) do |f| %>
+<%= form_for(@dog, remote: true)  do |f| %>
   <% if @dog.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@dog.errors.count, "error") %> prohibited this dog from being saved:</h2>
@@ -110,7 +109,9 @@
     <%= f.text_area :notes %>
   </div>
   <div class="actions">
-    <%= f.submit "value" => "Update", "data-theme" => "g" %>
+    <%= f.submit :id => 'submit_button', :value => 'Update', "data-theme" => "g", "data-remote" => "true" %>
+
+    <!-- <%= f.submit "value" => "Update", "data-theme" => "g" %> -->
     <fieldset class="ui-grid-a">
         <div class="ui-block-a"><%= link_to 'Cancel', dogs_path, { "data-role" => "button" } %></div>
         <div class="ui-block-b"><%= link_to 'Delete', @dog, method: :delete, remote: true, data: { confirm: 'Are you sure?', role: "button", theme: "d" } %></div>
@@ -134,4 +135,3 @@
 
 
 
-</div>

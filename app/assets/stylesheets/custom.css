@@ -360,3 +360,7 @@ div.ui-radio span.ui-btn-text {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
+
+#add-dog-form {
+	display:none;
+}

@@ -2,12 +2,16 @@ class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
   # GET /dogs.json
+
+
   
   def index
     @dogs = Dog.alphabetically
+    @dog = Dog.new(params[:dog])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @dogs }
+      format.js
     end
   end
 
@@ -27,11 +31,11 @@ class DogsController < ApplicationController
   # GET /dogs/new.json
   def new
     @dog = Dog.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @dog }
-    end
+      format.js
+    end    
   end
 
   # GET /dogs/1/edit
@@ -46,13 +50,15 @@ class DogsController < ApplicationController
 
     respond_to do |format|
       if @dog.save
-        format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
-        format.json { render json: @dog, status: :created, location: @dog }
+        # format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
+        # format.json { render json: @dog, status: :created, location: @dog }
+        # format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
+        # format.json { render json: @dog, status: :created, location: @dog }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
       end
-        # format.js
     end
   end
 
@@ -60,11 +66,11 @@ class DogsController < ApplicationController
   # PUT /dogs/1.json
   def update
     @dog = Dog.find(params[:id])
-
     respond_to do |format|
       if @dog.update_attributes(params[:dog])
-        format.html { redirect_to @dog, notice: 'Dog was successfully updated.' }
-        format.json { head :no_content }
+        # format.html { redirect_to @dog, notice: 'Dog was successfully updated.' }
+        # format.json { head :no_content }
+        format.js
       else
         format.html { render action: "edit" }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
