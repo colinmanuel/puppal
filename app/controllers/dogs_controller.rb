@@ -7,12 +7,13 @@ class DogsController < ApplicationController
   
   def index
     @dogs = Dog.alphabetically
-    @dog = Dog.new(params[:dog])
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @dogs }
-      format.js
-    end
+    @dog = Dog.new(params[:dog])  
+
+   # respond_to do |format|
+   #    format.html 
+   #    format.js
+   #  end
+
   end
 
 
@@ -24,6 +25,8 @@ class DogsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @dog }
+      format.js 
+
     end
   end
 
@@ -34,7 +37,7 @@ class DogsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @dog }
-      format.js
+      format.js 
     end    
   end
 
@@ -50,11 +53,11 @@ class DogsController < ApplicationController
 
     respond_to do |format|
       if @dog.save
+        # commented out html to test 500 error
         # format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
         # format.json { render json: @dog, status: :created, location: @dog }
-        # format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
-        # format.json { render json: @dog, status: :created, location: @dog }
-        format.js
+        format.js { render text: "New dog added"}
+
       else
         format.html { render action: "new" }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
@@ -62,18 +65,22 @@ class DogsController < ApplicationController
     end
   end
 
+
   # PUT /dogs/1
   # PUT /dogs/1.json
   def update
     @dog = Dog.find(params[:id])
+    logger.debug
     respond_to do |format|
       if @dog.update_attributes(params[:dog])
         # format.html { redirect_to @dog, notice: 'Dog was successfully updated.' }
         # format.json { head :no_content }
-        format.js
+        format.js { render text: "Dog updated"}
+        logger.debug
       else
         format.html { render action: "edit" }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
+        logger.debug
       end
     end
   end
@@ -90,4 +97,8 @@ class DogsController < ApplicationController
       format.js
     end
   end
+
+
+
+
 end

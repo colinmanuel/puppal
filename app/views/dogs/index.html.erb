@@ -30,10 +30,17 @@
                     <% @dogs.each do |dog| %>
                         <li>
                             <div id="<%= dom_id(dog) %>" data-role="collapsible"  data-content-theme="c" data-inset="false">
-                                <h3><%= dog.name %></h3> 
+                                <h3 id="<%= dom_id(dog) %>" ><%= dog.name %></h3> 
 <span>
-<!-- begin form -->
-<%= form_for(dog, remote: true) do |f| %>
+
+
+
+
+
+
+<%= form_for dog, remote: true do |f| %>
+
+
   <% if dog.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(dog.errors.count, "error") %> prohibited this dog from being saved:</h2>
@@ -133,9 +140,11 @@
     <%= f.text_area :notes %>
   </div>
   <div class="actions">
-    <%= f.submit "value" => "Update", "data-theme" => "g" %>
+    <%= f.submit "value" => "Update", "data-theme" => "g"%>
+
     <fieldset class="ui-grid-a">
         <div class="ui-block-a"><%= link_to 'Cancel', dogs_path, { "data-role" => "button" } %></div>
+
         <div class="ui-block-b"><%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?', role: "button", theme: "d" }, remote: true %></div>
     </fieldset>
   </div>
@@ -143,12 +152,7 @@
 <% end %>
 
 <!-- /end form -->
-
-
-
-
-
-                                </span>
+</span>
                             </div>                                   
                         </li>
                     <% end %>
