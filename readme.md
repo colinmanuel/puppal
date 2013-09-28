@@ -1,4 +1,4 @@
-PupPal: A Prototype
+PupPal: A Prototype App for Tracking Shelter Dog Marketing
 ===============================
 
 this is a test. 
