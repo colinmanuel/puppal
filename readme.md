@@ -1,16 +1,13 @@
-PupPal: A Prototype App for Tracking Shelter Dog Marketing
+PupPal: A Prototype App
 ===============================
 
-this is a test. 
-
-A prototype demo is previewable on Heroku at http://protected-savannah-4558.herokuapp.com/dogs. 
-
 ## Goal:
-PupPal is designed to lower the barrier to publication for volunteers. Using their smartphones as both navigational and organizational instruments.
+PupPal is designed to lower the barrier to publication for people who volunteer to photograph, record and write about dogs at animal shelters. Using their smartphones as both navigational and organizational instruments. A prototype demo is previewable on Heroku at http://protected-savannah-4558.herokuapp.com/dogs. Note: demo may not be as up-to-date as the GitHub repository.
 
 ## Features:
-- Find dogs by 
-- feature two
+- Find dogs by location, need, priority
+- Add dogs
+- Upload photos and videos to third party site (forthcoming)
 
 ## Dependencies:
 - Ruby on Rails
@@ -25,7 +22,7 @@ PupPal is designed to lower the barrier to publication for volunteers. Using the
 ## Pending Improvements
 - Administrative login
 - SmugMug photo and video upload and preview
-- Backbone.js implementation
+- AngularJS implementation
 - Google Map directions to sites hosting dogs
 - Administrative back end for desktop management
 - Database design improvements
