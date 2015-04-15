@@ -9,6 +9,9 @@ PupPal is designed to lower the barrier to publication for people who volunteer 
 - Add dogs
 - Upload photos and videos to third party site (forthcoming)
 
+### Main Screen
+![Main Screen](/img/screenshot-puppal.png "Main Screen")
+
 ## Dependencies:
 - Ruby on Rails
 - jQuery Mobile
